@@ -6,3 +6,4 @@ node_modules/
 .idea/muglife.iml
 .idea/vcs.xml
 frontend/package-lock.json
+backend/package-lock.json

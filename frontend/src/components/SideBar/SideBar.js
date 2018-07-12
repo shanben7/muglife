@@ -11,7 +11,7 @@ class SideBar extends React.Component {
 
   render () {
     return (
-      <Menu>
+      <Menu noOverlay>
         <a id="home" className="menu-item">Home</a>
         <a id="about" className="menu-item">About</a>
         <a id="contact" className="menu-item">Contact</a>
