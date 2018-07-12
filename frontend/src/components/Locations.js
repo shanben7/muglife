@@ -23,16 +23,6 @@ class Locations extends Component {
     this.props.fetchLocations()
   }
 
-  addLocation (event) {
-    event.preventDefault() // Prevent form from reloading page
-    const { newLocation } = this.state
-
-    if(newLocation) {
-      const location = { name: newLocation }
-      this.props.addLocation(location)
-      this.setState({ newLocation: '' })
-    }
-  }
 
   render() {
     let { newLocation } = this.state
