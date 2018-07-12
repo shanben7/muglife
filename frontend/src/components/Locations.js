@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import 'bulma/css/bulma.css'
 import { connect } from 'react-redux'
-import { addLocation, deleteLocation, fetchLocations } from './actions/locations';
+import { addLocation, deleteLocation, fetchLocations } from '../actions/locations';
 
 const Location = ({ location, id, onDelete, onToggle }) => (
   <div className="box location-item level is-mobile">

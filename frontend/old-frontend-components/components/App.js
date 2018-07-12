@@ -6,7 +6,7 @@ import Add from './Add';
 import Update from './Update';
 import Delete from './Delete';
 import AddLocation from './AddLocation';
-import NavBar from './NavBar';
+import NavBar from '../../src/components/NavBar';
 import Hero from './Hero'
 import '../styles/index.css';
 import MapContainer from "./MapContainer";

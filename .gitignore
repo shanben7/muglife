@@ -5,3 +5,4 @@ node_modules/
 .idea/modules.xml
 .idea/muglife.iml
 .idea/vcs.xml
+frontend/package-lock.json
