@@ -1,7 +1,7 @@
 import React from 'react'
 import { slide as Menu } from 'react-burger-menu'
-import {Button, Modal} from "react-bootstrap";
 import './SideBar.css'
+import AddLocation from "../../containers/AddLocation";
 
 // TODO: Replace placeholder SideBar/NavBar, just using this for easy development.
 
@@ -12,41 +12,34 @@ class SideBar extends React.Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      showModal: false
     };
   }
 
   handleClose() {
-    this.setState({ show: false });
+    this.setState({ showModal: false });
   }
 
   handleShow(e) {
     e.preventDefault();
-    this.setState({ show: true });
+    this.setState({ showModal: true });
   }
 
   render() {
     return (
       <div>
-
         <Menu noOverlay>
           <a id="home" className="menu-item">Home</a>
           <a onClick={e => this.handleShow(e)} className="menu-item">Add Location</a>
         </Menu>
-        <Modal backdrop={false} show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <h4>Text in a modal</h4>
-            <p>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.handleClose}>Close</Button>
-          </Modal.Footer>
-        </Modal>
+
+        <AddLocation
+        isOpen={this.state.showModal}
+        hide={() => this.handleClose()}
+        />
+
+
+
       </div>
     );
   }

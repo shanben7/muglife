@@ -6,30 +6,13 @@ import {googleMapURL} from "../index";
 class App extends Component {
   constructor(props) {
     super(props);
-    // TODO: fill with blank location
-    this.state = { newLocation: '' }
   }
 
   componentDidMount() {
     this.props.fetchLocations()
   }
 
-  addLocation (event) {
-    event.preventDefault(); // Prevent form from reloading page
-    const { newLocation } = this.state;
-
-    if(newLocation) {
-      const location = { name: newLocation };
-      this.props.addLocation(location);
-      this.setState({ newLocation: '' })
-    }
-  }
-
   render() {
-
-    let { newLocation } = this.state;
-    const { locations, isLoading, isSaving, error, deleteLocation } = this.props;
-
     return (
       <div style={{ zIndex: -1 }}>
         <SideBar
