@@ -7,3 +7,4 @@ node_modules/
 .idea/vcs.xml
 frontend/package-lock.json
 backend/package-lock.json
+.idea/inspectionProfiles/profiles_settings.xml
