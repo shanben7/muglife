@@ -31,8 +31,11 @@ class App extends Component {
     const { locations, isLoading, isSaving, error, deleteLocation } = this.props;
 
     return (
-      <div className="App">
-        <SideBar />
+      <div style={{ zIndex: -1 }}>
+        <SideBar
+        locations={this.props.locations}
+        addLocation={this.props.addLocation}
+        />
         <Map
           googleMapURL={googleMapURL}
           locations={this.props.locations}

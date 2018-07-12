@@ -23,7 +23,6 @@ class Locations extends Component {
     this.props.fetchLocations()
   }
 
-
   render() {
     let { newLocation } = this.state
     const { locations, isLoading, isSaving, error, deleteLocation } = this.props

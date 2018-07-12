@@ -8,3 +8,9 @@ node_modules/
 frontend/package-lock.json
 backend/package-lock.json
 .idea/inspectionProfiles/profiles_settings.xml
+frontend/package-lock.json
+frontend/.idea/workspace.xml
+frontend/package-lock.json
+frontend/.idea/modules.xml
+frontend/.idea/misc.xml
+frontend/.idea/frontend.iml
