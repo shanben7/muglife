@@ -29,7 +29,6 @@ class SideBar extends React.Component {
     return (
       <div>
         <Menu noOverlay>
-          <a id="home" className="menu-item">Home</a>
           <a onClick={e => this.handleShow(e)} className="menu-item">Add Location</a>
         </Menu>
 
