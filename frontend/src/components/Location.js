@@ -18,7 +18,7 @@ class Location extends React.Component {
   }
 
   render() {
-    const icon = { url: mugPath, scaledSize: new google.maps.Size(30, 30) };
+    const icon = { url: mugPath, scaledSize: new google.maps.Size(40, 40) };
 
     return (
       <Marker

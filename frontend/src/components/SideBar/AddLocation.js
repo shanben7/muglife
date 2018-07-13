@@ -13,7 +13,7 @@ class AddLocation extends Component {
     return (
       <Modal backdrop={false} show={this.props.isOpen} onHide={this.props.hide}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Add a new discount location</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <AddLocationForm addLocation={this.props.addLocation} handleClose={this.props.hide}/>

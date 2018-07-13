@@ -29,7 +29,10 @@ class SideBar extends React.Component {
     return (
       <div>
         <Menu noOverlay>
-          <a onClick={e => this.handleShow(e)} className="menu-item">Add Location</a>
+          <h1 style={{color: 'cornflowerBlue'}}>mugLife</h1>
+          <h4 style={{textAlign: 'left'}}>serving up coffee
+          <br/>one reusable mug at a time</h4>
+          <a style={{color: 'cornflowerBlue'}} onClick={e => this.handleShow(e)} className="menu-item">Add Location</a>
         </Menu>
         <AddLocation isOpen={this.state.showModal} hide={() => this.handleClose()}/>
       </div>
