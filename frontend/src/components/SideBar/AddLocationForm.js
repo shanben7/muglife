@@ -40,6 +40,11 @@ class AddLocationForm extends Component {
       </FormGroup>
 
       <FormGroup>
+        <Col sm={2}>Location</Col>
+        <Col sm={10}><LocationSearchInput updateLocation={(latLng) => this.updateLocation(latLng)}/></Col>
+      </FormGroup>
+
+      <FormGroup>
         <Col sm={2}>Discount</Col>
         <Col sm={10}>
           <FormControl
@@ -49,11 +54,6 @@ class AddLocationForm extends Component {
             value={this.state.discount}
             onChange={e => this.handleChange(e, "discount")}/>
         </Col>
-      </FormGroup>
-
-      <FormGroup>
-        <Col sm={2}>Location</Col>
-        <Col sm={10}><LocationSearchInput updateLocation={(latLng) => this.updateLocation(latLng)}/></Col>
       </FormGroup>
       <Modal.Footer>
         <Button bsStyle="primary" onClick={() => this.handleSubmit()}>Submit</Button>
