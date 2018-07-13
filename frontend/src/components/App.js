@@ -3,23 +3,21 @@ import Map from "./Map";
 import SideBar from "./SideBar/SideBar";
 import {googleMapURL} from "../index";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+// TODO: type all component props with PropTypes or possibly TS
 
+class App extends Component {
   componentDidMount() {
     this.props.fetchLocations()
   }
 
   render() {
     return (
-      <div style={{ zIndex: -1 }}>
+      <div>
         <SideBar
         locations={this.props.locations}
         addLocation={this.props.addLocation}
         />
-        <Map
+        <Map style={{ zIndex: -1 }}
           googleMapURL={googleMapURL}
           locations={this.props.locations}
           loadingElement={<div style={{ height: '100%' }} />}
