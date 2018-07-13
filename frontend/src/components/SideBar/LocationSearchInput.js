@@ -21,10 +21,10 @@ export class LocationSearchInput extends React.Component {
       .then(results => getLatLng(results[0]))
       .then(latLng => {
         console.log('Success', latLng);
-        coords = latLng;
+        this.props.updateLocation(latLng);
       })
       .catch(error => console.error('Error', error));
-    this.props.updateLocation(coords);
+
   };
 
   render() {
@@ -38,7 +38,7 @@ export class LocationSearchInput extends React.Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: 'Search Places ...',
+                placeholder: 'Enter the location name',
                 className: 'location-search-input',
               })}
             />

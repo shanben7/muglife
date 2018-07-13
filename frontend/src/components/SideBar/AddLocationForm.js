@@ -6,15 +6,14 @@ class AddLocationForm extends Component {
   constructor(props) {
     super(props);
     this.state = { };
-    this.updateLocation = this.updateLocation.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState({name: e.target.value});
   }
 
   updateLocation(latLng) {
     this.setState({lat: latLng.lat, lng: latLng.lng});
+  }
+
+  handleChange(e, field) {
+    this.setState({[field]: e.target.value});
   }
 
   handleSubmit() {
@@ -36,7 +35,7 @@ class AddLocationForm extends Component {
             type="text"
             placeholder="Enter a location name"
             value={this.state.name}
-            onChange={this.handleChange.bind(this)}/>
+            onChange={e => this.handleChange(e, "name")}/>
         </Col>
       </FormGroup>
 
@@ -48,16 +47,13 @@ class AddLocationForm extends Component {
             placeholder="Enter a location discount"
             step={0.01}
             value={this.state.discount}
-            onChange={this.handleChange.bind(this)}/>
+            onChange={e => this.handleChange(e, "discount")}/>
         </Col>
       </FormGroup>
 
-
       <FormGroup>
         <Col sm={2}>Location</Col>
-        <Col sm={10}>
-          <LocationSearchInput updateLocation={this.updateLocation}/>
-        </Col>
+        <Col sm={10}><LocationSearchInput updateLocation={(latLng) => this.updateLocation(latLng)}/></Col>
       </FormGroup>
       <Modal.Footer>
         <Button bsStyle="primary" onClick={() => this.handleSubmit()}>Submit</Button>
