@@ -28,7 +28,7 @@ class SideBar extends React.Component {
   render() {
     return (
       <div>
-        <Menu noOverlay>
+        <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } noOverlay>
           <a onClick={e => this.handleShow(e)} className="menu-item">Add Location</a>
         </Menu>
         <AddLocation isOpen={this.state.showModal} hide={() => this.handleClose()}/>

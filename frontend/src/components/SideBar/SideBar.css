@@ -3,13 +3,13 @@
     position: fixed;
     width: 36px;
     height: 30px;
-    left: 36px;
-    top: 36px;
+    left: 30px;
+    top: 13px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    background: #373a47;
+    background: cornflowerblue;
 }
 
 /* Position and sizing of clickable cross button */
@@ -25,6 +25,7 @@
 
 /* General sidebar styles */
 .bm-menu {
+    position: fixed;
     background: #373a47;
     padding: 2.5em 1.5em 0;
     font-size: 1.75em;
