@@ -5,6 +5,7 @@ const LocationSchema = new mongoose.Schema(
     name: String,
     lat: Number,
     lng: Number,
+    type: { type: String, enum: ['FOOD', 'DRINK'] },
     discount: Number,
   }
 );
