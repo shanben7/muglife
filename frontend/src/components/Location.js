@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import {Marker, InfoWindow} from 'react-google-maps'
 import Info from "./Info";
 import mugPath from '../assets/mug.png'
+import foodPath from '../assets/stew.png'
 
 class Location extends React.Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class Location extends React.Component {
   }
 
   render() {
-    const icon = { url: mugPath, scaledSize: new google.maps.Size(40, 40) };
+    const locationType = this.props.type;
+    const icon = { url: locationType === 'FOOD' ? foodPath : mugPath, scaledSize: new google.maps.Size(45, 45) };
 
     return (
       <Marker

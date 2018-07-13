@@ -10,6 +10,7 @@ class Map extends Component {
         name={location.name}
         lat={location.lat}
         lng={location.lng}
+        type={location.type}
         discount={location.discount}
       />)
   }

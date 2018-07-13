@@ -1,11 +1,21 @@
 import React, {Component} from 'react';
-import {Button, Col, Form, FormControl, FormGroup, Modal} from "react-bootstrap";
+import {
+  Button,
+  ButtonToolbar,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  Modal,
+  RadioGroup, ToggleButton,
+  ToggleButtonGroup
+} from "react-bootstrap";
 import {LocationSearchInput} from "./LocationSearchInput";
 
 class AddLocationForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = { type: 'DRINK' };
   }
 
   updateLocation(latLng) {
@@ -16,12 +26,17 @@ class AddLocationForm extends Component {
     this.setState({[field]: e.target.value});
   }
 
+  handleTypeChange(e) {
+    this.setState({ type: e });
+  }
+
   handleSubmit() {
     const name = this.state.name;
     const lat = this.state.lat;
     const lng = this.state.lng;
     const discount = this.state.discount;
-    this.props.addLocation({name, lat, lng, discount});
+    const type = this.state.type;
+    this.props.addLocation({name, lat, lng, type, discount});
     this.props.handleClose();
   }
 
@@ -55,6 +70,29 @@ class AddLocationForm extends Component {
             onChange={e => this.handleChange(e, "discount")}/>
         </Col>
       </FormGroup>
+
+
+
+
+
+      <FormGroup>
+        <Col sm={2}>Type</Col>
+        <Col sm={10}>
+          <ButtonToolbar>
+            <ToggleButtonGroup type="radio" name="options"  value={this.state.type} onChange={e => this.handleTypeChange(e)}>
+              <ToggleButton value={'DRINK'}>Drink</ToggleButton>
+              <ToggleButton value={'FOOD'}>Food</ToggleButton>
+            </ToggleButtonGroup>
+          </ButtonToolbar>
+        </Col>
+      </FormGroup>
+
+
+
+
+
+
+
       <Modal.Footer>
         <Button bsStyle="primary" onClick={() => this.handleSubmit()}>Submit</Button>
       </Modal.Footer>
