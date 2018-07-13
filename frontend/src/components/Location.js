@@ -1,28 +1,34 @@
+/*global google*/
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Marker, InfoWindow } from 'react-google-maps'
+import {Marker, InfoWindow} from 'react-google-maps'
+import Info from "./Info";
+import mugPath from '../assets/mug.png'
 
 class Location extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isInfoOpen: false };
+    this.state = {isInfoOpen: false};
 
     this.onToggleOpen = this.onToggleOpen.bind(this);
   }
 
-  onToggleOpen () {
-    this.setState({ isInfoOpen: !this.state.isInfoOpen });
+  onToggleOpen() {
+    this.setState({isInfoOpen: !this.state.isInfoOpen});
   }
 
-  render () {
+  render() {
+    const icon = { url: mugPath, scaledSize: new google.maps.Size(30, 30) };
+
     return (
       <Marker
-        position={{ lat: this.props.lat, lng: this.props.lng }}
+        icon={icon}
+        position={{lat: this.props.lat, lng: this.props.lng}}
         onClick={this.onToggleOpen}
       >
         {this.state.isInfoOpen &&
         <InfoWindow onCloseClick={this.onToggleOpen}>
-          <div>name: {this.props.name}, discount: {this.props.discount}</div>
+          <Info name={this.props.name} discount={this.props.discount}/>
         </InfoWindow>}
       </Marker>
     );
