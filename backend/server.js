@@ -35,8 +35,8 @@ app.use(router.routes());
 app.use(require('koa-static')('./build'));
 app.use(router.allowedMethods());
 
-const user = Utils.fromEnv('MUGLIFE_USER');
-const password = Utils.fromEnv('MUGLIFE_PASSWORD');
+const user = Utils.fromEnv('MUGLIFE_USER') || "shanben7";
+const password = Utils.fromEnv('MUGLIFE_PASSWORD') || "jamAAl89";
 const database = `mongodb://${user}:${password}@ds133621.mlab.com:33621/muglife`;
 mongoose.connect(database);
 
